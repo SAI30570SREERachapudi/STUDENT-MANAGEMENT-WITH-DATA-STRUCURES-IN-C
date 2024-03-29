@@ -20,13 +20,13 @@ while(1){
 	printf("Enter Your Choice");
 	scanf("%d",&ch);
 	switch(ch){
-		case 1:void add();
+		case 1:add();
 		       break;
-		case 2:void update();
+		case 2:update();
 		       break;
-		case 3:void update();
+		case 3:update();
 		       break;
-		case 4:void delete();
+		case 4:delete();
 		       break;
 		case 5:printf("Thank You!Please visit again");
 		       exit(1);
@@ -35,27 +35,29 @@ while(1){
 	}
 }
 }
-void add(){
-	void add() {
+ void add() {
     newnode = (struct node*)malloc(sizeof(struct node));
-
     printf("Enter First Name: ");
-    scanf("%s", newnode->firstName);
+    scanf("%[^\n]s",newnode->firstName);
     
     printf("Enter Second Name: ");
-    scanf("%s", newnode->secondName);
+    scanf("%[^\n]s", newnode->secondName);
     
     printf("Enter Course Code: ");
-    scanf("%s", newnode->courseCode);
+    scanf("%[^\n]s", newnode->courseCode);
     
-    printf("Enter Grade:(first ,second....10th grade) ");
-    scanf("%s", &newnode->grade); 
-    
+    printf("Enter Grade:");
+    scanf("%c",&newnode->grade); 
+ 	
     newnode->next = NULL;
 
-    if(head == NULL) {
+    if(head == NULL)
+    {
         head = newnode;
-    } else {
+    }
+
+    else
+    {
         ptr = head;
         while(ptr->next != NULL) {
             ptr = ptr->next;
@@ -63,7 +65,29 @@ void add(){
         ptr->next = newnode;
     }
     
-    printf("Student details added \n");
+    printf("Student details added successfully\n");
 }
+
+}
+void update(){
+printf("Enter First Name of the Student to update the details\n");
+char keyFirstName[100];
+char keySecondName[100];
+scanf("%[^\n]s",keyFirstName);
+printf("Enter Second name of the Student to update the datails\n");
+scanf("%[^\n]s",keySecondName);
+ptr=head;
+while(ptr!->NULL&&strcpm(ptr->secondName,keySecondName)&&strcmp(ptr->firstName,keyFirstName)
+		{
+		ptr=ptr->next;
+		}
+	if(ptr==NULL){
+		printf("There is no such student with the name %s %s",keyFirstName,keySecondName);
+		printf("Enter 1 to search again");
+		int ch;
+		scanf("%d",&ch);
+		//To enable the user to give input again and again to search
+		update();		
+	}
 
 }
