@@ -5,11 +5,11 @@ struct node{
 char firstName[100];
 char secondName[100]
 char courseCode[100];
-char grade;
+char grade[10];
 struct node *next;
 }*head=NULL,*ptr,*newnode;
-int main()
-{ int ch;
+int main(){ 
+int ch;
 while(1){
 	printf("========= Student Information System ========= \n");
 	printf("Enter 1 to add Student Details\n);
@@ -32,10 +32,38 @@ while(1){
 		       exit(1);
 		       break;
 		default:printf("Invalid Choice");
-
 	}
-
 }
+}
+void add(){
+	void add() {
+    newnode = (struct node*)malloc(sizeof(struct node));
 
+    printf("Enter First Name: ");
+    scanf("%s", newnode->firstName);
+    
+    printf("Enter Second Name: ");
+    scanf("%s", newnode->secondName);
+    
+    printf("Enter Course Code: ");
+    scanf("%s", newnode->courseCode);
+    
+    printf("Enter Grade:(first ,second....10th grade) ");
+    scanf("%s", &newnode->grade); 
+    
+    newnode->next = NULL;
+
+    if(head == NULL) {
+        head = newnode;
+    } else {
+        ptr = head;
+        while(ptr->next != NULL) {
+            ptr = ptr->next;
+        }
+        ptr->next = newnode;
+    }
+    
+    printf("Student details added \n");
+}
 
 }
