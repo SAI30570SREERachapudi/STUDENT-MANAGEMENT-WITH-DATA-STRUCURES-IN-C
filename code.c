@@ -87,5 +87,4 @@ while(ptr!->NULL&&strcpm(ptr->secondName,keySecondName)&&strcmp(ptr->firstName,k
 		//To enable the user to give input again and again to search
 		update();		
 	}
-
 }
