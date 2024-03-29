@@ -64,11 +64,9 @@ while(1){
         }
         ptr->next = newnode;
     }
-    
     printf("Student details added successfully\n");
 }
 
-}
 void update(){
 printf("Enter First Name of the Student to update the details\n");
 char keyFirstName[100];
