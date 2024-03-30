@@ -75,30 +75,31 @@ while(1){
 }
 
 void update(){
-//printf("Enter First Name of the Student to update the details\n");
-//char keyFirstName[100];
-//char keySecondName[100];
-//scanf("%[^\n]s",keyFirstName);
-//printf("Enter Second name of the Student to update the datails\n");
-//scanf("%[^\n]s",keySecondName);
-//ptr=head;
-//while(ptr!->NULL&&strcpm(ptr->secondName,keySecondName)&&strcmp(ptr->firstName,keyFirstName)
-//		{
-//		ptr=ptr->next;
-//		}
-//	if(ptr==NULL){
-//		printf("There is no such student with the name %s %s",keyFirstName,keySecondName);
-//		printf("Enter 1 to search again");
-//		int ch;
-//		scanf("%d",&ch);
-//		//To enable the user to give input again and again to search
-//		update();		
-//	}
+printf("Enter First Name of the Student to update the details\n");
+char keyFirstName[100];
+char keySecondName[100];
+scanf("%[^\n]s",keyFirstName);
+printf("Enter Second name of the Student to update the datails\n");
+scanf("%[^\n]s",keySecondName);
+ptr=head;
+while(ptr!->NULL&&strcpm(ptr->secondName,keySecondName)&&strcmp(ptr->firstName,keyFirstName)
+		{
+		ptr=ptr->next;
+		}
+	if(ptr==NULL){
+		printf("There is no such student with the name %s %s",keyFirstName,keySecondName);
+		printf("Enter 1 to search again");
+		int ch;
+		scanf("%d",&ch);
+		//To enable the user to give input again and again to search
+		update();		
+	}
 }
 void display() {
     if (head == NULL) {
-        printf("No    student   details to display.\n");
-        return;
+          printf("No    student   details to display.\n");
+      
+	    return;
     }
 
     printf("Student Details are\n");
@@ -106,10 +107,10 @@ void display() {
     int i = 1;
     while (ptr != NULL) {
         printf("Student %d:\n", i);
-        printf("First Name: %s\n", ptr->firstName);
+        printf("First Name : %s\n", ptr->firstName);
         printf("Second Name: %s\n", ptr->secondName);
         printf("Course Code: %s\n", ptr->courseCode);
-        printf("Grade: %c\n\n", ptr->grade);
+        printf("Grade  : %c\n\n", ptr->grade);
         ptr = ptr->next;
         i++;
     }
