@@ -7,7 +7,7 @@ char secondName[100];
 char courseCode[100];
 char grade;
 struct node *next;
-}*head=NULL,*ptr,*newnode;
+}*head=NULL,*ptr,*pre,*newnode;
 void add();
 void update();
 void display();
@@ -143,3 +143,27 @@ void display() {
         ptr = ptr->next;
 }
 }
+void deletion(){
+    printf("Enter First Name of the Student to update the details: ");
+    char keyFirstName[100];
+    char keySecondName[100];
+    scanf(" %[^\n]", keyFirstName);
+    printf("Enter Second name of the Student to update the details: ");
+    scanf(" %[^\n]", keySecondName);
+    ptr = head;
+    while (ptr != NULL && (strcmp(ptr->secondName, keySecondName) != 0 || strcmp(ptr->firstName, keyFirstName) != 0)) {
+        	pre=ptr;
+	    ptr = ptr->next;
+    }
+    if (ptr == NULL) {
+        printf("There is no such student with the name %s %s\n", keyFirstName, keySecondNam
+	}
+	else{
+	pre->next=ptr->next;
+	free(ptr);
+
+	}
+
+
+}
+
