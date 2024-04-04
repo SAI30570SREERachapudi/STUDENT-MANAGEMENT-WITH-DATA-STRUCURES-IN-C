@@ -22,7 +22,8 @@ while(1){
         printf("Enter 2 to update the details of a student\n");
         printf("Enter 3 to diaplaythe details of a student\n");
         printf("Enter 4 to Delete the details of a student\n");
-        printf("Enter 5 to exit\n");
+		printf("Enter 5 to search the details of a student\n");
+		printf("Enter 5 to exit\n");
         printf("Enter Your Choice");
         scanf("%d",&ch);
         switch(ch){
@@ -34,7 +35,9 @@ while(1){
                        break;
                 case 4:deletion();
                        break;
-                case 5:printf("Thank You!Please visit again");
+                case 5:search();
+                       break;
+                case 6:printf("Thank You!Please visit again");
                        exit(1);
                        break;
                 default:printf("Invalid Choice");
@@ -212,6 +215,40 @@ void deletion(){
 						else{
 							printf("Student not found");
 						}
+                break;
+            default:
+                printf("Invalid choice\n");
+                break;
+        }
+}
+void search(){
+	printf("Enter 1 to update First Name of the student\n");
+        printf("Enter 2 to update Second Name of the student\n");
+        printf("Enter 3 to update Course Code of the student\n");
+        printf("Enter 4 to update Grade of the student\n");
+        int choice;
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+                printf("Enter First Name: ");
+                scanf(" %[^\n]", ptr->firstName);
+                printf("First Name updated successfully\n");
+                break;
+            case 2:
+                printf("Enter Second Name: ");
+                scanf(" %[^\n]", ptr->secondName);
+                printf("Second Name updated successfully\n");
+                break;
+            case 3:
+                printf("Enter Course Code: ");
+                scanf(" %[^\n]", ptr->courseCode);
+                printf("Course code updated successfully\n");
+                break;
+            case 4:
+                printf("Enter Grade: ");
+                scanf(" %c", &ptr->grade);
+                printf("Grade updated successfully\n");
                 break;
             default:
                 printf("Invalid choice\n");
