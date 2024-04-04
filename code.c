@@ -12,7 +12,7 @@ struct node *next;
 void add();
 void update();
 void display();
-
+void deletion();
 int main(){
 int ch;
 while(1){
@@ -33,7 +33,7 @@ while(1){
                        break;
                 case 3:display();
                        break;
-                case 4://delete();
+                case 4:deletion();
                        break;
                 case 5:printf("Thank You!Please visit again");
                        exit(1);
@@ -154,4 +154,7 @@ void display() {
         ptr = ptr->next;
         i++;
     }
+}
+void deletion(){
+	
 }
