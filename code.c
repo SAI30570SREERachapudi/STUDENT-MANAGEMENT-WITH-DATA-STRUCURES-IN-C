@@ -1,23 +1,22 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include<wchar.h>
 struct node{
 char firstName[100];
 char secondName[100];
 char courseCode[100];
 char grade;
 struct node *next;
-}*head=NULL,*ptr,*newnode;
+}*head=NULL,*ptr,*pre,*newnode;
 void add();
 void update();
 void display();
 void deletion();
 int main(){
 int ch;
+
 while(1){
-	 wchar_t emoji[] = L"\U0001F600"; // Unicode for the smiling face emoji
-    wprintf(L"Emoji: %ls\n", emoji);
+    
         printf("========= Student Information System ========= \n");
         printf("Enter 1 to add Student Details\n");
         printf("Enter 2 to update the details of a student\n");
@@ -156,5 +155,66 @@ void display() {
     }
 }
 void deletion(){
-	
+		printf("Enter 1 to delete by First Name of the student\n");
+        printf("Enter 2 to delete by Second Name of the student\n");
+        int choice;
+        char keyFirstName[100];
+        char keySecondName[100];
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+                printf("Enter First Name: ");
+                scanf(" %[^\n]", keyFirstName);
+                if(head==NULL){
+                	printf("List is empty\n");
+				}
+                ptr=head;
+                if((strcmp(head->firstName, keyFirstName) == 0)&&ptr->next==NULL) {
+                	free(ptr);
+                	printf("Deleted successfully\n");
+				}
+                if((strcmp(head->firstName, keyFirstName) == 0)) {
+       				 	ptr=ptr->next;
+       				 	head=ptr;
+       				 	free(ptr);
+       				 	printf("Deleted Successfully \n");
+   					 }
+                while (ptr != NULL && (strcmp(ptr->firstName, keyFirstName) != 0)) {
+       				 	pre=ptr;
+						ptr = ptr->next;
+   					 }
+   					 if(ptr!=NULL){
+   					 	pre->next=ptr->next;
+   					 	free(ptr);
+   					 	printf("Deleted Successfully\n");
+						}
+						else{
+							printf("Student not found");
+						}
+                break;
+            case 2:
+                printf("Enter Second Name: ");
+                scanf(" %[^\n]", keySecondName);
+                if(head==NULL){
+                	printf("List is empty\n");
+				}
+                ptr=head;
+                while (ptr != NULL && (strcmp(ptr->secondName, keySecondName) != 0)) {
+       				 	pre=ptr;
+						ptr = ptr->next;
+   					 }
+   					 if(ptr!=NULL){
+   					 	pre->next=ptr->next;
+   					 	free(ptr);
+   					 	printf("Deleted Successfully\n");
+						}
+						else{
+							printf("Student not found");
+						}
+                break;
+            default:
+                printf("Invalid choice\n");
+                break;
+        }
 }
