@@ -203,6 +203,16 @@ void deletion(){
                 	printf("List is empty\n");
 				}
                 ptr=head;
+               if((strcmp(head->secondName, keySecondName) == 0)&&ptr->next==NULL) {
+                	free(ptr);
+                	printf("Deleted successfully\n");
+				}
+                if((strcmp(head->secondName, keySecondName) == 0)) {
+       				 	ptr=ptr->next;
+       				 	head=ptr;
+       				 	free(ptr);
+       				 	printf("Deleted Successfully \n");
+   					 }
                 while (ptr != NULL && (strcmp(ptr->secondName, keySecondName) != 0)) {
        				 	pre=ptr;
 						ptr = ptr->next;
@@ -222,34 +232,77 @@ void deletion(){
         }
 }
 void search(){
-	printf("Enter 1 to update First Name of the student\n");
-        printf("Enter 2 to update Second Name of the student\n");
-        printf("Enter 3 to update Course Code of the student\n");
-        printf("Enter 4 to update Grade of the student\n");
+		printf("Enter 1 to search by First Name of the student\n");
+        printf("Enter 2 to search by Second Name of the student\n");
         int choice;
+        char keyFirstName[100];
+        char keySecondName[100];
         printf("Enter your choice: ");
         scanf("%d", &choice);
         switch (choice) {
             case 1:
                 printf("Enter First Name: ");
-                scanf(" %[^\n]", ptr->firstName);
-                printf("First Name updated successfully\n");
+                scanf(" %[^\n]", keyFirstName);
+                if(head==NULL){
+                	printf("List is empty\n");
+				}
+                ptr=head;
+                if((strcmp(head->firstName, keyFirstName) == 0)&&ptr->next==NULL) {
+                	printf("First Name : %s\n", ptr->firstName);
+        			printf("Second Name: %s\n", ptr->secondName);
+        			printf("Course Code: %s\n", ptr->courseCode);
+       			 	printf("Grade  : %c\n\n", ptr->grade);
+				}
+                if((strcmp(head->firstName, keyFirstName) == 0)) {
+       			 	printf("First Name : %s\n", ptr->firstName);
+        			printf("Second Name: %s\n", ptr->secondName);
+        			printf("Course Code: %s\n", ptr->courseCode);
+       			 	printf("Grade  : %c\n\n", ptr->grade);
+   					 }
+                while (ptr != NULL && (strcmp(ptr->firstName, keyFirstName) != 0)) {
+						ptr = ptr->next;
+   					 }
+   					 if(ptr!=NULL){
+   					printf("First Name : %s\n", ptr->firstName);
+        			printf("Second Name: %s\n", ptr->secondName);
+        			printf("Course Code: %s\n", ptr->courseCode);
+       			 	printf("Grade  : %c\n\n", ptr->grade);
+						}
+						else{
+							printf("Student not found");
+						}
                 break;
             case 2:
                 printf("Enter Second Name: ");
-                scanf(" %[^\n]", ptr->secondName);
-                printf("Second Name updated successfully\n");
-                break;
-            case 3:
-                printf("Enter Course Code: ");
-                scanf(" %[^\n]", ptr->courseCode);
-                printf("Course code updated successfully\n");
-                break;
-            case 4:
-                printf("Enter Grade: ");
-                scanf(" %c", &ptr->grade);
-                printf("Grade updated successfully\n");
-                break;
+                scanf(" %[^\n]", keySecondName);
+                if(head==NULL){
+                	printf("List is empty\n");
+				}
+                ptr=head;
+                if((strcmp(head->firstName, keyFirstName) == 0)&&ptr->next==NULL) {
+                	printf("First Name : %s\n", ptr->firstName);
+        			printf("Second Name: %s\n", ptr->secondName);
+        			printf("Course Code: %s\n", ptr->courseCode);
+       			 	printf("Grade  : %c\n\n", ptr->grade);
+				}
+                if((strcmp(head->firstName, keyFirstName) == 0)) {
+       			 	printf("First Name : %s\n", ptr->firstName);
+        			printf("Second Name: %s\n", ptr->secondName);
+        			printf("Course Code: %s\n", ptr->courseCode);
+       			 	printf("Grade  : %c\n\n", ptr->grade);
+   					 }
+                while (ptr != NULL && (strcmp(ptr->firstName, keyFirstName) != 0)) {
+						ptr = ptr->next;
+   					 }
+   					 if(ptr!=NULL){
+   					printf("First Name : %s\n", ptr->firstName);
+        			printf("Second Name: %s\n", ptr->secondName);
+        			printf("Course Code: %s\n", ptr->courseCode);
+       			 	printf("Grade  : %c\n\n", ptr->grade);
+						}
+						else{
+							printf("Student not found");
+						}                break;
             default:
                 printf("Invalid choice\n");
                 break;
