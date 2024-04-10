@@ -141,7 +141,7 @@ void update() {
 
 void display() {
     if (head == NULL) {
-          printf("No    student   details to display.\n");
+          printf("No student details to display.\n");
             return;
     }
     printf("Student Details are\n");
@@ -175,11 +175,11 @@ void deletion(){
                 ptr=head;
                 if((strcmp(head->firstName, keyFirstName) == 0)&&ptr->next==NULL) {
                 	free(ptr);
+                	head=NULL;
                 	printf("Deleted successfully\n");
 				}
-                if((strcmp(head->firstName, keyFirstName) == 0)) {
-       				 	ptr=ptr->next;
-       				 	head=ptr;
+                if((strcmp(ptr->firstName, keyFirstName) == 0)) {
+       				 	head=head->next;
        				 	free(ptr);
        				 	printf("Deleted Successfully \n");
    					 }
@@ -247,17 +247,13 @@ void search(){
                 	printf("List is empty\n");
 				}
                 ptr=head;
-                if((strcmp(head->firstName, keyFirstName) == 0)&&ptr->next==NULL) {
-                	printf("First Name : %s\n", ptr->firstName);
-        			printf("Second Name: %s\n", ptr->secondName);
-        			printf("Course Code: %s\n", ptr->courseCode);
-       			 	printf("Grade  : %c\n\n", ptr->grade);
-				}
-                if((strcmp(head->firstName, keyFirstName) == 0)) {
+                
+                if((strcmp(ptr->firstName, keyFirstName) == 0)) {
        			 	printf("First Name : %s\n", ptr->firstName);
         			printf("Second Name: %s\n", ptr->secondName);
         			printf("Course Code: %s\n", ptr->courseCode);
        			 	printf("Grade  : %c\n\n", ptr->grade);
+       			 	return;
    					 }
                 while (ptr != NULL && (strcmp(ptr->firstName, keyFirstName) != 0)) {
 						ptr = ptr->next;
