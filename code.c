@@ -66,7 +66,6 @@ while(1){
     {
         head = newnode;
     }
-
     else
     {
         ptr = head;
@@ -78,7 +77,6 @@ while(1){
     }
     printf("Student details added successfully\n");
 }
-
 void update() {
     printf("Enter First Name of the Student to update the details: ");
     char keyFirstName[100];
