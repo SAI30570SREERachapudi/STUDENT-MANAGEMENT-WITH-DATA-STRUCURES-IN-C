@@ -136,7 +136,6 @@ void update() {
         }
     }
 }
-
 void display() {
     if (head == NULL) {
           printf("No student details to display.\n");
