@@ -20,7 +20,7 @@ while(1){
         printf("========= Student Information System ========= \n");
         printf("Enter 1 to add Student Details\n");
         printf("Enter 2 to update the details of a student\n");
-        printf("Enter 3 to diaplaythe details of a student\n");
+        printf("Enter 3 to displaythe details of a student\n");
         printf("Enter 4 to Delete the details of a student\n");
 		printf("Enter 5 to search the details of a student\n");
 		printf("Enter 5 to exit\n");
@@ -44,24 +44,22 @@ while(1){
         }
 }
 }
-
  void add() {
     newnode = (struct node*)malloc(sizeof(struct node));
     printf("Enter First Name: ");
-      fflush(stdin);
+    fflush(stdin);
     scanf("%[^\n]s",newnode->firstName);
     fflush(stdin);
     printf("Enter Second Name: ");
     scanf("%[^\n]s", newnode->secondName);
-      fflush(stdin);
+    fflush(stdin);
     printf("Enter Course Code: ");
     scanf("%[^\n]s", newnode->courseCode);
-      fflush(stdin);
+    fflush(stdin);
     printf("Enter Grade:");
     scanf("%c",&newnode->grade);
-          fflush(stdin);
+    fflush(stdin);
     newnode->next = NULL;
-
     if(head == NULL)
     {
         head = newnode;
@@ -192,7 +190,7 @@ void deletion(){
 						else{
 							printf("Student not found");
 						}
-                break;
+                    break;
             case 2:
                 printf("Enter Second Name: ");
                 scanf(" %[^\n]", keySecondName);
