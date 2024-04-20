@@ -44,29 +44,26 @@ while(1){
         }
 }
 }
-
  void add() {
     newnode = (struct node*)malloc(sizeof(struct node));
     printf("Enter First Name: ");
-      fflush(stdin);
+    fflush(stdin);
     scanf("%[^\n]s",newnode->firstName);
     fflush(stdin);
     printf("Enter Second Name: ");
     scanf("%[^\n]s", newnode->secondName);
-      fflush(stdin);
+    fflush(stdin);
     printf("Enter Course Code: ");
     scanf("%[^\n]s", newnode->courseCode);
-      fflush(stdin);
+    fflush(stdin);
     printf("Enter Grade:");
     scanf("%c",&newnode->grade);
-          fflush(stdin);
+    fflush(stdin);
     newnode->next = NULL;
-
     if(head == NULL)
     {
         head = newnode;
     }
-
     else
     {
         ptr = head;
@@ -78,7 +75,6 @@ while(1){
     }
     printf("Student details added successfully\n");
 }
-
 void update() {
     printf("Enter First Name of the Student to update the details: ");
     char keyFirstName[100];
@@ -138,7 +134,6 @@ void update() {
         }
     }
 }
-
 void display() {
     if (head == NULL) {
           printf("No student details to display.\n");
@@ -195,7 +190,7 @@ void deletion(){
 						else{
 							printf("Student not found");
 						}
-                break;
+                    break;
             case 2:
                 printf("Enter Second Name: ");
                 scanf(" %[^\n]", keySecondName);
