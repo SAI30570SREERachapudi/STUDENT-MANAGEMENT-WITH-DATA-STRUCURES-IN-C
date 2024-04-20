@@ -187,9 +187,7 @@ void deletion(){
    					 	free(ptr);
    					 	printf("Deleted Successfully\n");
 						}
-						else{
-							printf("Student not found");
-						}
+						
                     break;
             case 2:
                 printf("Enter Second Name: ");
