@@ -20,10 +20,10 @@ while(1){
         printf("========= Student Information System ========= \n");
         printf("Enter 1 to add Student Details\n");
         printf("Enter 2 to update the details of a student\n");
-        printf("Enter 3 to diaplaythe details of a student\n");
+        printf("Enter 3 to displaythe details of a student\n");
         printf("Enter 4 to Delete the details of a student\n");
 		printf("Enter 5 to search the details of a student\n");
-		printf("Enter 5 to exit\n");
+		printf("Enter 6 to exit\n");
         printf("Enter Your Choice");
         scanf("%d",&ch);
         switch(ch){
@@ -281,16 +281,16 @@ void search(){
         			printf("Course Code: %s\n", ptr->courseCode);
        			 	printf("Grade  : %c\n\n", ptr->grade);
 				}
-                if((strcmp(head->firstName, keyFirstName) == 0)) {
+        if((strcmp(head->firstName, keyFirstName) == 0)) {
        			 	printf("First Name : %s\n", ptr->firstName);
         			printf("Second Name: %s\n", ptr->secondName);
         			printf("Course Code: %s\n", ptr->courseCode);
        			 	printf("Grade  : %c\n\n", ptr->grade);
    					 }
-                while (ptr != NULL && (strcmp(ptr->firstName, keyFirstName) != 0)) {
+        while (ptr != NULL && (strcmp(ptr->firstName, keyFirstName) != 0)) {
 						ptr = ptr->next;
    					 }
-   					 if(ptr!=NULL){
+   		if(ptr!=NULL){
    					printf("First Name : %s\n", ptr->firstName);
         			printf("Second Name: %s\n", ptr->secondName);
         			printf("Course Code: %s\n", ptr->courseCode);
