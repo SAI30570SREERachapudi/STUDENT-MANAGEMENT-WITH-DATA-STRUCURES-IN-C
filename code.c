@@ -16,7 +16,6 @@ int main(){
 int ch;
 
 while(1){
-    
         printf("========= Student Information System ========= \n");
         printf("Enter 1 to add Student Details\n");
         printf("Enter 2 to update the details of a student\n");
@@ -74,6 +73,24 @@ while(1){
         newnode->next=NULL;
     }
     printf("Student details added successfully\n");
+}
+void display() {
+    if (head == NULL) {
+          printf("No student details to display.\n");
+            return;
+    }
+    printf("Student Details are\n");
+    ptr = head;
+    int i = 1;
+    while (ptr != NULL) {
+        printf("Student %d:\n", i);
+        printf("First Name : %s\n", ptr->firstName);
+        printf("Second Name: %s\n", ptr->secondName);
+        printf("Course Code: %s\n", ptr->courseCode);
+        printf("Grade  : %c\n\n", ptr->grade);
+        ptr = ptr->next;
+        i++;
+    }
 }
 void update() {
     printf("Enter First Name of the Student to update the details: ");
@@ -134,24 +151,7 @@ void update() {
         }
     }
 }
-void display() {
-    if (head == NULL) {
-          printf("No student details to display.\n");
-            return;
-    }
-    printf("Student Details are\n");
-    ptr = head;
-    int i = 1;
-    while (ptr != NULL) {
-        printf("Student %d:\n", i);
-        printf("First Name : %s\n", ptr->firstName);
-        printf("Second Name: %s\n", ptr->secondName);
-        printf("Course Code: %s\n", ptr->courseCode);
-        printf("Grade  : %c\n\n", ptr->grade);
-        ptr = ptr->next;
-        i++;
-    }
-}
+
 void deletion(){
 		printf("Enter 1 to delete by First Name of the student\n");
         printf("Enter 2 to delete by Second Name of the student\n");
